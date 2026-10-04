@@ -11,7 +11,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(140px, 23vh, 220px);
+  min-height: clamp(80px, 23vh, 150px);
   padding: 28px 16px;
   color: #000;
   background: #fff;
