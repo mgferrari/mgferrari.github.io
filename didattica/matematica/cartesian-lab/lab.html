@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive laboratory for exploring the role of parameters in the Cartesian plane.">
+  <title>Laboratory | Cartesian Plane</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@333f55ec19733c28cdc43567ecf72eafd6b0af61/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+<style>.project-return{display:block;padding:10px 24px;background:#f6f4ee;color:#253a32;border-bottom:1px solid #ccd1c6;font:13px/1.5 system-ui} @media print{.project-return{display:none}}</style></head>
+<body><a class="project-return" href="../../../didattica/">← Marco Giovanni Ferrari · Didattica</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Back to the home page">
+        <span class="brand-mark">∑</span>
+        <span>Cartesian Plane Laboratory</span>
+      </a>
+      <a class="back-link" href="index.html">← All topics</a>
+    </div>
+  </header>
+
+  <main class="shell lab-page">
+    <section class="lab-intro">
+      <p class="eyebrow" id="topic-kicker">INTERACTIVE LABORATORY</p>
+      <h1 id="topic-title">Straight line</h1>
+      <p class="lab-lead" id="topic-description"></p>
+      <div class="formula-box" aria-live="polite">
+        <span class="formula-label">Current equation</span>
+        <span id="dynamic-formula" class="formula-main"></span>
+      </div>
+    </section>
+
+    <div class="mode-switch" role="tablist" aria-label="Laboratory mode">
+      <button class="mode-button active" type="button" data-mode="explore" role="tab" aria-selected="true">Explore</button>
+      <button class="mode-button" type="button" data-mode="challenge" role="tab" aria-selected="false">Challenge</button>
+    </div>
+
+    <section class="lab-grid">
+      <aside class="control-panel" aria-labelledby="controls-title">
+        <div id="explore-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">PARAMETERS</p>
+            <h2 id="controls-title">Change the values</h2>
+          </div>
+          <div id="slider-container" class="slider-stack"></div>
+          <button id="reset-button" class="button-secondary" type="button">Reset values</button>
+
+          <div class="observation-box">
+            <p class="eyebrow">OBSERVE</p>
+            <div id="observation-text"></div>
+          </div>
+        </div>
+
+        <div id="challenge-panel" hidden>
+          <div class="panel-heading">
+            <p class="eyebrow">CHALLENGE</p>
+            <h2>Find the parameters</h2>
+          </div>
+          <p class="challenge-copy">The dashed curve is the target. Change the parameters until your curve matches it.</p>
+          <div id="challenge-slider-container" class="slider-stack"></div>
+          <div class="button-row">
+            <button id="check-button" class="button-primary" type="button">Check answer</button>
+            <button id="new-challenge-button" class="button-secondary" type="button">New challenge</button>
+          </div>
+          <div id="challenge-feedback" class="feedback" aria-live="polite"></div>
+        </div>
+      </aside>
+
+      <section class="graph-section" aria-label="Interactive Cartesian plane">
+        <div class="graph-toolbar">
+          <label class="check-row">
+            <input id="show-points" type="checkbox" checked>
+            <span>Show key points</span>
+          </label>
+          <label class="check-row">
+            <input id="show-guides" type="checkbox" checked>
+            <span>Show parameter guides</span>
+          </label>
+          <label class="check-row">
+            <input id="show-grid" type="checkbox" checked>
+            <span>Show grid</span>
+          </label>
+        </div>
+        <div class="graph-wrap">
+          <svg id="graph" viewBox="0 0 840 560" role="img" aria-label="Graph in the Cartesian plane"></svg>
+        </div>
+        <p class="graph-caption" id="graph-caption"></p>
+      </section>
+    </section>
+
+    <section class="theory-strip" aria-labelledby="theory-title">
+      <div>
+        <p class="eyebrow">THEORY IN BRIEF</p>
+        <h2 id="theory-title">What do the parameters mean?</h2>
+      </div>
+      <div id="theory-content" class="theory-content"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
