@@ -23,7 +23,7 @@ main {
 .banner:focus-visible { outline: 2px solid #000; outline-offset: 5px; }
 .banner span {
   font-size: clamp(12px, 2.4vw, 33px);
-  font-weight: 400;
+  font-weight: 200;
   line-height: 1.2;
   letter-spacing: -.035em;
   text-align: center;
