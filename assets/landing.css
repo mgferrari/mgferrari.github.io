@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: #fff; font-family: Arial, Helvetica, sans-serif; }
+main { display: grid; grid-template-rows: repeat(3, 1fr); gap: 2px; min-height: 100svh; }
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  padding: 28px 20px;
+  isolation: isolate;
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--background);
+  background-image: var(--photo, none);
+  background-position: var(--position, center);
+  background-size: cover;
+}
+.banner::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(0 0 0 / 24%); transition: background .2s; }
+.banner:hover::before { background: rgb(0 0 0 / 12%); }
+.banner:focus-visible { outline: 3px solid white; outline-offset: -8px; }
+.banner span { font-size: clamp(28px, 4.8vw, 66px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; text-align: center; text-shadow: 0 1px 16px rgb(0 0 0 / 20%); }
+/* Add --photo: url("images/school.webp") and optionally --position per banner when photographs are selected. */
+.school { --background: #46594f; }
+.photography { --background: #666560; }
+.about { --background: #765e50; }
+@media (prefers-reduced-motion: reduce) { .banner::before { transition: none; } }
